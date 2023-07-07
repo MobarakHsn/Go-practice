@@ -60,7 +60,7 @@ func main() {
 		fmt.Println("Unknown number")
 	}
 
-	//Arrays declaration and printing
+	//Array
 	var arr [5]int
 	arr[4] = 100
 	fmt.Println(arr)
@@ -70,9 +70,41 @@ func main() {
 	for _, i := range arr {
 		fmt.Println(i)
 	}
+	//Slice
 	slice1 := []int{1, 2, 3}
 	slice1 = append(slice1, 4, 5)
 	fmt.Println(slice1)
 	slice2 := make([]int, 0, 5)
 	fmt.Println(slice2)
+	slc := arr[0:2]
+	slc = append(slc, 1, 2)
+	fmt.Println(slc)
+
+	slice3 := []int{1, 2, 3, 4}
+	slice4 := make([]int, 2)
+	copy(slice4, slice3)
+	fmt.Println(slice3)
+	fmt.Println(slice4)
+	//Map
+	var mp = make(map[string]int)
+	mp["hi"] = 1
+	mp["bye"] = 2
+	delete(mp, "bye")
+	fmt.Println(mp["bye"])
+	name, ok := mp["hi"]
+	fmt.Println(name, ok)
+
+	info := map[string]map[string]float32{
+		"Mobarak": map[string]float32{
+			"Age":  24,
+			"Cgpa": 3.88,
+		},
+		"Sabbir": map[string]float32{
+			"Age":  25,
+			"Cgpa": 2.12,
+		},
+	}
+	fmt.Println(info["Mobarak"]["Age"])
+	name1, ok := info["Mobarak"]
+	fmt.Println(name1["Age"], ok)
 }
