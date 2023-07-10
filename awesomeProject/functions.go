@@ -10,7 +10,7 @@ func average(xs []float64) float64 {
 	xs[0] = 5
 	return 0
 }
-func f() (a int, b int) {
+func fc() (a int, b int) {
 	return 5, 6
 }
 
@@ -67,73 +67,73 @@ type Android struct {
 	Model string
 }
 
-func main() {
-
-	an := new(Android)
-	an.Name = "Mobarak"
-	an.Talk()
-	return
-	//Struct
-	var cir Circle
-	cir.r = 10
-	fmt.Println(cir)
-
-	var cir1 = new(Circle)
-	cir1 = &cir
-	fmt.Println(cir1.y)
-
-	cir3 := Circle{20, 1, 10}
-	fmt.Println(cir3)
-	//Methods
-	fmt.Println(cir3.area())
-	//Pointer
-	var pptr *int
-	x := 5
-	pptr = &x
-	z := 20
-	pptr = &z
-	fmt.Println(*pptr)
-	zero(&x)
-	fmt.Println(x)
-	ptr := new(int)
-	fmt.Println(*ptr)
-
-	//Panic & recover
-	defer func() {
-		str := recover()
-		fmt.Println(str)
-	}()
-	panic("Onek PanicxD")
-
-	//Defer
-	defer first()
-	third()
-	defer second()
-
-	//Closure
-	nextEven := makeEvenGenerator()
-	fmt.Println(nextEven()) //0
-	fmt.Println(nextEven()) //2
-	fmt.Println("Hello")
-	arr := []float64{1, 2, 3}
-	brr := []int{1, 2, 3}
-
-	//multiple Args
-	fmt.Println(add(brr[0:1]...))
-	fmt.Println(add(1, 2, 3))
-	fmt.Println(average(arr))
-	fmt.Println(arr)
-	x, y := f()
-	fmt.Println(x, y)
-
-	divide := func(a, b int) int {
-		return a / b
-	}
-	fmt.Println(divide(3, 2))
-	in := 0
-	increment := func() int {
-		in++
-		return in
-	}
-	fmt.Println(increment())
-}
+//func main() {
+//
+//	an := new(Android)
+//	an.Name = "Mobarak"
+//	an.Talk()
+//	return
+//	//Struct
+//	var cir Circle
+//	cir.r = 10
+//	fmt.Println(cir)
+//
+//	var cir1 = new(Circle)
+//	cir1 = &cir
+//	fmt.Println(cir1.y)
+//
+//	cir3 := Circle{20, 1, 10}
+//	fmt.Println(cir3)
+//	//Methods
+//	fmt.Println(cir3.area())
+//	//Pointer
+//	var pptr *int
+//	x := 5
+//	pptr = &x
+//	z := 20
+//	pptr = &z
+//	fmt.Println(*pptr)
+//	zero(&x)
+//	fmt.Println(x)
+//	ptr := new(int)
+//	fmt.Println(*ptr)
+//
+//	//Panic & recover
+//	defer func() {
+//		str := recover()
+//		fmt.Println(str)
+//	}()
+//	panic("Onek PanicxD")
+//
+//	//Defer
+//	defer first()
+//	third()
+//	defer second()
+//
+//	//Closure
+//	nextEven := makeEvenGenerator()
+//	fmt.Println(nextEven()) //0
+//	fmt.Println(nextEven()) //2
+//	fmt.Println("Hello")
+//	arr := []float64{1, 2, 3}
+//	brr := []int{1, 2, 3}
+//
+//	//multiple Args
+//	fmt.Println(add(brr[0:1]...))
+//	fmt.Println(add(1, 2, 3))
+//	fmt.Println(average(arr))
+//	fmt.Println(arr)
+//	x, y := fc()
+//	fmt.Println(x, y)
+//
+//	divide := func(a, b int) int {
+//		return a / b
+//	}
+//	fmt.Println(divide(3, 2))
+//	in := 0
+//	increment := func() int {
+//		in++
+//		return in
+//	}
+//	fmt.Println(increment())
+//}

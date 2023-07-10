@@ -1,8 +1,42 @@
 package main
 
-import "fmt"
+import (
+	"container/list"
+	"fmt"
+	"sort"
+)
+
+type Person struct {
+	Name string
+	Age  int
+}
+type ByName []Person
+
+func (this ByName) Len() int {
+	return len(this)
+}
+func (this ByName) Less(i, j int) bool {
+	return this[i].Name < this[j].Name
+}
+func (this ByName) Swap(i, j int) {
+	this[i], this[j] = this[j], this[i]
+}
 
 func main() {
+	kids := []Person{
+		{"jill", 9},
+		{"araf", 10},
+	}
+	sort.Sort(ByName(kids))
+	fmt.Println(kids)
+	return
+	var lst list.List
+	lst.PushBack(1)
+	lst.PushBack(2)
+	lst.PushBack(3)
+	for i := lst.Front(); i != nil; i = i.Next() {
+		fmt.Println(i.Value)
+	}
 	fmt.Println("Hello World!")
 	fmt.Println("1 + 1 =", 1.2+1.0)
 	fmt.Println(len("Hello World"))
